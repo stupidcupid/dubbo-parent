@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>MCFP Properties XML</comment>
+
+    <entry key="zkdz">127.0.0.1:2181</entry>
+
+</properties>

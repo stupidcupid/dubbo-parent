@@ -11,14 +11,62 @@
     <name>dubbo-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>com</groupId>
+            <artifactId>dubbo-server-api</artifactId>
+            <version>${server-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com</groupId>
+            <artifactId>dubbo-server-provider</artifactId>
+            <version>${server-provider.version}</version>
         </dependency>
     </dependencies>
     <build>
         <finalName>dubbo-web</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>org.mortbay.jetty.Request.maxFormContentSize</name>
+                            <value>20000000</value>
+                        </systemProperty>
+                    </systemProperties>
+                    <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
+                    <scanIntervalSeconds>3</scanIntervalSeconds>
+                    <contextPath>/dubbo-web</contextPath>
+                    <jettyEnvXml>jetty-env.xml</jettyEnvXml>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8087</port>
+                        </connector>
+                    </connectors>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

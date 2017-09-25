@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>MCFP Properties XML</comment>
+
+    <!-- =========================================== -->
+    <!-- 以下是 Hibernate 配置，不用修改 -->
+    <!-- =========================================== -->
+    <entry key="hibernate.dialect">org.hibernate.dialect.MySQLMyISAMDialect</entry>
+    <entry key="hibernate.show_sql">true</entry>
+    <entry key="hibernate.format_sql">true</entry>
+    <entry key="hibernate.ehcache_config_file">/ehcache/ehcache-hibernate-local.xml</entry>
+
+    <entry key="jdbc.driverClassName">com.mysql.cj.jdbc.Driver</entry>
+    <entry key="jdbc.url">jdbc:mysql://127.0.0.1:3306/dubbo?useUnicode=true&amp;characterEncoding=utf-8</entry>
+    <entry key="jdbc.username">root</entry>
+    <entry key="jdbc.password">123456</entry>
+    <entry key="jdbc.pool.validationQuery">select 1</entry>
+
+    <entry key="zkdz">127.0.0.1:2181</entry>
+
+</properties>
