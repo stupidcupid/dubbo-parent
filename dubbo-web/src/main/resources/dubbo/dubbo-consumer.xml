@@ -12,7 +12,7 @@
     <dubbo:registry protocol="zookeeper" address="${zkdz}" timeout="30000"/>
 
     <!-- for dev -->
-    <dubbo:reference id="studentService" check="false" interface="com.dubbo.server.api.service.StudentService"/>
+    <dubbo:reference id="studentService" check="true" interface="com.dubbo.server.api.service.StudentService"/>
     <!-- for test -->
     <!--
     <dubbo:reference id="studentService" url="dubbo://localhost:20880" check="false" interface="com.dubbo.provider.service.StudentService"/>
